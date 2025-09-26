@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  producer:
+    build: ./producer
+    container_name: producer
+    volumes:
+      - queue_data:/app/data
+
+  consumer:
+    build: ./consumer
+    container_name: consumer
+    volumes:
+      - queue_data:/app/data
+
+volumes:
+  queue_data:
+
+  
